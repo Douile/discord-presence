@@ -72,6 +72,7 @@ builder! {Activity
     assets: ActivityAssets func,
     party: ActivityParty func,
     secrets: ActivitySecrets func,
+    buttons: ActivityButtons func,
 }
 
 builder! {ActivityTimestamps
@@ -96,6 +97,13 @@ builder! {ActivitySecrets
     spectate: String,
     game: String alias = "match",
 }
+
+builder! {ActivityButton
+    label: String,
+    url: String,
+}
+
+type ActivityButtons = Vec<ActivityButton>;
 
 #[cfg(test)]
 mod tests {
